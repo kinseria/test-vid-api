@@ -32,7 +32,7 @@ async function autoRecord() {
         if (!statusDiv) return false;
         const text = statusDiv.textContent.trim().toLowerCase();
         console.log('Current Status:', text);
-        return text.includes('uploaded') || text.includes('done') || text.includes('success');
+        return text;
     }, {
         timeout: 5 * 60 * 1000, // 5 minutes max
         polling: 2000, // check every 2 seconds
