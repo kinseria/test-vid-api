@@ -1,0 +1,13 @@
+{
+  "name": "puppeteer-recorder",
+  "version": "1.0.0",
+  "description": "Auto video recording via puppeteer",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}
