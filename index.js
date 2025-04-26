@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 
 async function autoRecord() {
     const browser = await puppeteer.launch({
-        headless: 'new',
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
@@ -14,7 +14,7 @@ async function autoRecord() {
     });
 
     console.log('Waiting for recording to finish...');
-    await page.waitForTimeout(120000); // Wait 2 minutes (adjust depending on your recording time)
+    await new Promise(resolve => setTimeout(resolve, 120000)); // 2 minutes wait
 
     console.log('Recording done. Closing browser.');
     await browser.close();
