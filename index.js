@@ -6,16 +6,24 @@ async function autoRecord() {
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
-            '--disable-gpu',
-            '--disable-accelerated-2d-canvas',
-            '--no-zygote',
-            '--disable-dev-shm-usage',
-            '--single-process',
-            '--use-fake-ui-for-media-stream',
             '--use-fake-device-for-media-stream',
-            '--disable-audio-output',
+            '--use-file-for-fake-audio-capture=/tmp/test.wav',
+            '--disable-background-timer-throttling',
+            '--disable-backgrounding-occluded-windows',
+            '--disable-renderer-backgrounding',
+            '--force-device-scale-factor=1',
+            '--force-dark-mode=0',
+            '--disable-gpu',
+            '--use-gl=swiftshader',
+            '--window-size=1280,720',
         ],
+        defaultViewport: {
+            width: 1280,
+            height: 720,
+            deviceScaleFactor: 1,
+        },
     });
+
 
     const page = await browser.newPage();
 
